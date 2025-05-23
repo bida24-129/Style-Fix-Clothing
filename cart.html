@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cart - Style Fix Clothing</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    
+  </style>
+</head>
+<body id="cart-page">
+
+  <header>
+     <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="service.html">Services</a>
+      <a href="FAQ.html">FAQ</a>
+      <a href="testimonial.html">Testimonials</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="order.html">Order</a>
+      <a href="cart.html" class="active">Cart</a>
+      <a href="contact.html">Contact</a>
+      <a href="search.html">Search</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Your Cart</h1>
+    <div class="cart-container" id="cartContainer"></div>
+  </main>
+
+  <div class="footer">
+    <div class="social-icons">
+      <a href="#"><img src="facebook.png" alt="Facebook" /></a>
+      <a href="#"><img src="instagram.png" alt="Instagram" /></a>
+      <a href="https://wa.me/c/26773684840"><img src="whatsapp.png" alt="WhatsApp" /></a>
+      <a href="#"><img src="tiktok.png" alt="TikTok" /></a>
+    </div>
+  </div>
+
+  <script>
+
+    document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
+    
+    menuToggle.addEventListener('click', function() {
+        nav.classList.toggle('active');
+        this.classList.toggle('active');
+    });
+});
+
+    const cartContainer = document.getElementById('cartContainer');
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    if (cart.length === 0) {
+      cartContainer.innerHTML = '<div class="no-orders">No orders yet. Go to <a href="order.html">order</a> page.</div>';
+    } else {
+      cart.forEach((item, index) => {
+        const card = document.createElement('div');
+        card.className = 'cart-item';
+        card.setAttribute("data-index", index);
+
+        const orderDate = new Date(item.timestamp || Date.now()).toLocaleString();
+
+        card.innerHTML = `
+          <button class="remove-icon" onclick="removeCartItem(${index})">×</button>
+          <div class="left-section">
+            <h3>Order ${index + 1} - ${item.type}</h3>
+            <div class="details">
+              <p><strong>Size:</strong> ${item.size}</p>
+              <p><strong>Design:</strong> ${item.design}</p>
+              <p><strong>Quantity:</strong> ${item.quantity}</p>
+              <p><strong>Color:</strong> ${item.color === "Specify" ? item.colorSpecify : item.color}</p>
+              <p><strong>Description:</strong> ${item.description || "N/A"}</p>
+              <p><strong>Total:</strong> P${item.totalCost}</p>
+              <p class="order-time">Ordered on: ${orderDate}</p>
+              <div class="progress" id="progress${index}">
+                <p><strong>Status:</strong> <button class="status-button" id="status${index}">Pending</button></p>
+                <button class="markDelivered" onclick="markDelivered(${index})">Mark as Delivered</button>
+              </div>
+            </div>
+          </div>
+          <div class="right-section">
+            <div class="comment">
+              <label for="comment${index}"><strong>Comment:</strong></label>
+              <textarea id="comment${index}" placeholder="Write your comment about the order..."></textarea>
+            </div>
+            <div class="review-container">
+              <label for="rating${index}"><strong>Rating (out of 5):</strong></label>
+              <select id="rating${index}">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5" selected>5</option>
+              </select>
+            </div>
+            <button class="save-comment-button" onclick="saveComment(${index})">Send Comment</button>
+          </div>
+        `;
+        cartContainer.appendChild(card);
+      });
+    }
+
+    function markDelivered(index) {
+      const statusButton = document.getElementById(`status${index}`);
+      statusButton.textContent = "Delivered";
+      statusButton.classList.add("delivered");
+      statusButton.disabled = true;
+    }
+
+    function saveComment(index) {
+      const comment = document.getElementById(`comment${index}`).value.trim();
+      const rating = document.getElementById(`rating${index}`).value;
+      if (comment) {
+        const message = `Order ${index + 1} Comment:\n"${comment}"\nRating: ${rating}/5`;
+        const whatsappUrl = `https://wa.me/26773684840?text=${encodeURIComponent(message)}`;
+        window.open(whatsappUrl, "_blank");
+        alert(`Comment sent via WhatsApp:\n"${comment}"\nRating: ${rating}/5`);
+      } else {
+        alert("Please write a comment before sending.");
+      }
+    }
+
+    function removeCartItem(index) {
+      const card = document.querySelector(`.cart-item[data-index="${index}"]`);
+      if (card) {
+        card.classList.add("removing");
+        setTimeout(() => {
+          cart.splice(index, 1);
+          localStorage.setItem('cart', JSON.stringify(cart));
+          location.reload();
+        }, 400);
+      }
+    }
+  </script>
+
+</body>
+</html>

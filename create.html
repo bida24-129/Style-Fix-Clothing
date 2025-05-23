@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register account</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body id="create-page">
+    <div class="container">
+        <h2>Create an account</h2>
+        <form action="register.php" method="post">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="number" name="age" placeholder="Age" required>
+            <input type="text" name="address" placeholder="Address" required>
+            <select name="gender" required>
+                <option value="" disabled selected>Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+            <input type="text" name="phone" placeholder="Phone Number" required>
+            <input type="submit" value="Register">
+        </form>
+    </div>
+</body>
+</html>

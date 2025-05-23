@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+   
+  </style>
+</head>
+<body id="index-page">
+
+<div class="left-column">
+  <div class="envelope" onclick="toggleMessage()">
+    <div class="notification-bubble" id="notificationBubble">1</div>
+    <div class="message" id="dailyMessage"></div>
+  </div>
+
+  <div class="notification-text" id="notificationText">
+    Press on the envelope to view your notification.
+  </div>
+
+  <div class="store-button" onclick="window.location.href='store.html';">
+    View Our Store
+  </div>
+</div>
+
+<div class="right-column">
+  <div class="login-form">
+    <h2>Login</h2>
+    <input type="text" name="username" placeholder="Enter username" required>
+    <input type="password" name="password" placeholder="Enter your password" required>
+    <a href="home.html" class="login-button">Login</a>
+    <a href="forgot-password.html">Forgot password?</a>
+    <div class="message">
+      <p>Don't have an account? <a href="create.html">Create one</a></p>
+    </div>
+  </div>
+</div>
+
+<script>
+  const messages = [
+    "🌞 Keep your head up. God is working even when you don’t see it.",
+    "🕊️ Faith over fear. Let today be the day you trust more.",
+    "🙏 You are not alone. God walks beside you every step of the way.",
+    "🌟 Let your light shine today—someone needs your spark.",
+    "💡 God’s timing is perfect. Never early, never late.",
+    "📖 Start your day with gratitude and God’s word.",
+    "🌈 Every storm runs out of rain. Your sunshine is near.",
+    "🙌 Don’t worry about tomorrow, God is already there.",
+    "✨ You were created with a purpose. Live it boldly.",
+    "💖 God’s love never fails. Rest in that truth today."
+  ];
+
+  // Generate a daily message based on the date
+  const today = new Date();
+  const index = today.getDate() % messages.length;
+  const todayMessage = messages[index];
+
+  function toggleMessage() {
+    const envelope = document.querySelector('.envelope');
+    const message = document.getElementById('dailyMessage');
+    const bubble = document.getElementById('notificationBubble');
+    const text = document.getElementById('notificationText');
+
+    envelope.classList.toggle('open');
+
+    if (envelope.classList.contains('open')) {
+      message.innerText = todayMessage;
+      bubble.style.display = 'none';
+      text.innerText = 'You have read your message.';
+    } else {
+      message.innerText = '';
+      bubble.style.display = 'block';
+      text.innerText = 'Press on the envelope to view your notification.';
+    }
+  }
+</script>
+
+</body>
+</html>

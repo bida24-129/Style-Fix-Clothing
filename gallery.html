@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+<body id="gallery-page">
+    <header>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav>
+            <a href="home.html" >Home</a> 
+            <a href="about.html">About</a> 
+            <a href="service.html">Services</a> 
+            <a href="FAQ.html">FAQ</a>
+            <a href="testimonial.html" >Testimonials</a>
+            <a href="gallery.html" class="active">Gallery</a>
+            <a href="order.html">Order</a> 
+            <a href="cart.html">Cart</a>
+            <a href="contact.html">Contact</a> 
+            <a href="search.html">Search</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Our Gallery</h2>
+        <div class="gallery">
+            <img src="bestill.cap.jpg" alt="Be still cap" onclick="openModal(this, 0)">
+            <img src="faith.bag.jpg" alt="Faith bag" onclick="openModal(this, 1)">
+            <img src="faith.cushion.jpg" alt="Faith cushion" onclick="openModal(this, 2)">
+            <img src="faith.'hoodie.jpg" alt="Faith hoodie" onclick="openModal(this, 3)">
+            <img src="jesus.buckethead.jpg" alt="Jesus bucket-head" onclick="openModal(this, 4)">
+            <img src="jireh.sweater.jpg" alt="Jireh sweater" onclick="openModal(this, 5)">
+            <img src="yaweh.hoodie.jpg" alt="Yaweh hoodie" onclick="openModal(this, 6)">
+            <img src="yaweh2.hoodie.jpg" alt="Yaweh2 hoodie" onclick="openModal(this, 7)">
+            <img src="walk.tshirt.jpg" alt="Walk tshirt" onclick="openModal(this, 8)">
+            <img src="stylefix.hoodie.jpg" alt="Style-Fix hoodie" onclick="openModal(this, 9)">
+        </div>
+    </main>
+
+    <div id="modal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="caption"></div>
+        <a class="prev" onclick="changeImage(-1)">&#10094;</a>
+        <a class="next" onclick="changeImage(1)">&#10095;</a>
+    </div>
+
+             
+    <div class="footer">
+        <div class="social-icons">
+            <a href="#"><img src="facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="instagram.png" alt="Instagram"></a>
+            <a href="https://wa.me/c/26773684840"><img src="whatsapp.png" alt="Whatsapp"></a>
+            <a href="#"><img src="tiktok.png" alt="Tiktok"></a>
+        </div>
+    <script src="gallery.js"></script>
+</body>
+</html>

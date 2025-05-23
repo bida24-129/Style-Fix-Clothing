@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Style Fix Clothing</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const nav = document.querySelector('nav');
+            
+            menuToggle.addEventListener('click', function() {
+                nav.classList.toggle('active');
+                
+                // Toggle the menu icon animation
+                this.classList.toggle('active');
+            });
+        });
+    </script>
+</head>
+<body id="home-page">
+    <header>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav>
+            <a href="home.html" class="active">Home</a> 
+            <a href="about.html">About</a> 
+            <a href="service.html">Services</a> 
+            <a href="FAQ.html">FAQ</a>
+            <a href="testimonial.html">Testimonials</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="order.html">Order</a> 
+            <a href="cart.html">Cart</a> 
+            <a href="contact.html">Contact</a> 
+            <a href="search.html">Search</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Welcome to Style Fix Clothing</h2>
+            <p>Your ultimate destination for stylish and comfortable clothing. Explore our latest collections and find the perfect outfit that suits your style.</p>
+        </section>
+        
+        <section>
+            <h2>Featured Products</h2>
+            <div class="product">
+                <div class="product-item">
+                    <img src="faith.fear.hoodie.jpg" alt="Hoodies">
+                    <h3>Hoodies</h3>
+                    <a href="hoodies.html" class="view-more-btn">View More...</a>
+                </div>
+                <div class="product-item">
+                    <img src="walk.tshirt.jpg" alt="T-Shirts">
+                    <h3>T-Shirts</h3>
+                    <a href="tshirts.html" class="view-more-btn">View More...</a>
+                </div>
+                <div class="product-item">
+                    <img src="plsams91.sweater.jpg" alt="Sweaters">
+                    <h3>Sweaters</h3>
+                    <a href="sweaters.html" class="view-more-btn">View More...</a>
+                </div> 
+                <div class="product-item">
+                    <img src="bestill.cap.jpg" alt="Caps">
+                    <h3>Caps</h3>
+                    <h4>COMING SOON!!!</h4>
+                    <a href="caps.html" class="view-more-btn">View More...</a>
+                </div>
+                <div class="product-item">
+                    <img src="jesus.buckethead.jpg" alt="Bucket-Hats">
+                    <h3>Bucket-Hats</h3>
+                    <h4>COMING SOON!!!</h4>
+                    <a href="hats.html" class="view-more-btn">View More...</a>
+                </div>
+                <div class="product-item">
+                    <img src="bag1.jpg" alt="Bags">
+                    <h3>Bags</h3>
+                    <h4>COMING SOON!!!</h4>
+                    <a href="bags.html" class="view-more-btn">View More...</a>
+                </div>
+                <div class="product-item">
+                    <img src="faith.cushion.jpg" alt="Cushions">
+                    <h3>Cushions</h3>
+                    <h4>COMING SOON!!!</h4>
+                    <a href="cushions.html" class="view-more-btn">View More...</a>
+                </div>
+                <div class="product-item">
+                    <img src="faith.pouch.jpg" alt="Pouches">
+                    <h3>Pouches</h3>
+                    <h4>COMING SOON!!!</h4>
+                    <a href="pouches.html" class="view-more-btn">View More...</a>
+                </div>
+                <div class="product-item">
+                    <img src="cup1.jpg" alt="Cups">
+                    <h3>Cups</h3>
+                    <h4>COMING SOON!!!</h4>
+                    <a href="cups.html" class="view-more-btn">View More...</a>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Why Choose Us?</h2>
+            <p>At Style Fix Clothing, we prioritize quality, comfort, and style. Join us on our journey to redefine fashion.</p>
+        </section>
+    </main>
+
+    <div class="footer">
+        <div class="social-icons">
+            <a href="#"><img src="facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="instagram.png" alt="Instagram"></a>
+            <a href="https://wa.me/c/26773684840"><img src="whatsapp.png" alt="Whatsapp"></a>
+            <a href="#"><img src="tiktok.png" alt="Tiktok"></a>
+        </div>
+    </div> 
+</body>
+</html>
