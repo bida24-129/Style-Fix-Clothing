@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Style Fix Clothing</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="service-page">
+    <header>
+        <nav>
+            <a href="store.home.html" >Home</a> 
+            <a href="store.about.html">About</a> 
+            <a href="store.services.html" class="active">Services</a> 
+            <a href="store.FAQ.html">FAQ</a>
+            <a href="index.html">SignIn</a>
+            <a href="create.html">SignUp</a>
+        </nav>
+    </header>
+
+<main>
+    <section class="services">
+        <h1>Our Services</h1>
+        <div class="service-container">
+            <div class="service-item">
+            <img src="walk.tshirt.jpg" alt="T-Shirts" class="service-image">
+            <h2>T-Shirts</h2>
+            <p>Express your faith with our high-quality printed T-Shirts. Wear your beliefs proudly!</p>
+            </div>
+            <div class="service-item">
+            <img src="faith.fear.hoodie.jpg" alt="Hoodies" class="service-image" style="height: 300px;">
+            <h2>Hoodies</h2>
+            <p>Stay warm and inspired with our custom printed hoodies featuring uplifting Christian messages.</p>
+            </div>
+            <div class="service-item">
+            <img src="plsams91.sweater.jpg" alt="Sweaters" class="service-image">
+            <h2>Sweaters</h2>
+            <p>Wrap yourself in faith with our beautifully printed sweaters,
+            perfect for any season.</p>
+            </div>
+            <div class="service-item">
+            <img src="bestill.cap.jpg" alt="T-Shirts" class="service-image">
+            <h2>Caps</h2>
+            <p>Express your faith with our high-quality printed T-Shirts. Wear your beliefs proudly!</p>
+            </div>
+            <div class="service-item">
+            <img src="jesus.buckethead.jpg" alt="Hoodies" class="service-image" style="height: 300px;">
+            <h2>Bucket-Hats</h2>
+            <p>Stay warm and inspired with our custom printed hoodies featuring uplifting Christian messages.</p>
+            </div>
+            <div class="service-item">
+            <img src="faith.cushion.jpg" alt="Sweaters" class="service-image">
+            <h2>Cushions</h2>
+            <p>Wrap yourself in faith with our beautifully printed sweaters,
+            perfect for any season.</p>
+            </div>
+
+            <div class="service-item">
+                <img src="cup1.jpg" alt="cups" class="service-image">
+                <h2>Cups</h2>
+                <p>Wrap yourself in faith with our beautifully printed sweaters,
+                perfect for any season.</p>
+                </div>
+                <div class="service-item">
+                    <img src="pouch1.jpg" alt="Pouchess" class="service-image">
+                    <h2>Pouches</h2>
+                    <p>Wrap yourself in faith with our beautifully printed sweaters,
+                    perfect for any season.</p>
+                    </div>
+                    <div class="service-item">
+                        <img src="bag1.jpg" alt="Bags" class="service-image">
+                        <h2>Bags</h2>
+                        <p>Wrap yourself in faith with our beautifully printed sweaters,
+                        perfect for any season.</p>
+                        </div>
+        </div>
+    </section>
+</main>
+
+<div class="footer">
+    <div class="social-icons">
+        <a href="#"><img src="facebook.png" alt="Facebook"></a>
+        <a href="#"><img src="instagram.png" alt="Instagram"></a>
+        <a href="https://wa.me/c/26773684840"><img src="whatsapp.png" alt="Whatsapp"></a>
+        <a href="#"><img src="tiktok.png" alt="Tiktok"></a>
+    </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const serviceItems = document.querySelectorAll('.service-item');
+        serviceItems.forEach((item, index) => {
+            item.style.opacity = 0;
+            item.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+                item.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out';
+                item.style.opacity = 1;
+                item.style.transform = 'translateY(0)';
+            }, index * 200);
+        });
+    });
+</script>
+   
+</body>
+</html>

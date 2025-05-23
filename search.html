@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search - Style Fix</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <nav>
+    <a href="home.html">Home</a> 
+    <a href="about.html">About</a> 
+    <a href="service.html">Services</a> 
+    <a href="FAQ.html">FAQ</a>
+    <a href="testimonial.html">Testimonials</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="order.html">Order</a> 
+    <a href="cart.html">Cart</a>
+    <a href="contact.html">Contact</a> 
+    <a href="search.html" class="active">Search</a>
+  </nav>
+</header>
+
+<div class="search-container">
+  <form>
+    <div class="search-box">
+      <input type="text" placeholder="Search here...">
+      <button type="submit">Search</button>
+    </div>
+  </form>
+</div>
+
+<div class="filters">
+  <a href="#" class="active">All</a>
+  <a href="#">Images</a>
+  <a href="#">Videos</a>
+  <a href="#">Links</a>
+</div>
+
+<div class="bottom-icons">
+ <div class="card">
+  <img src="whatsapp.png" class="card-img-top" alt="whatsapp-icon">
+  <div class="card-body">
+    <h5 class="card-title">WhatsApp</h5>
+    <a href="https://wa.me/c/26773684840" class="btn btn-primary">Chat with us</a>
+</div>
+</div>
+  <div class="card">
+    <img src="facebook.png" class="card-img-top" alt="facebook-icon">
+    <div class="card-body">
+      <h5 class="card-title">Facebook</h5>
+      <a href="https://www.facebook.com/profile.php?id=61567310487158" class="btn btn-primary">Follow us</a>
+    </div>
+  </div>
+  <div class="card">
+    <img src="instagram.png" class="card-img-top" alt="instagram-icon">
+    <div class="card-body">
+      <h5 class="card-title">Instagram</h5>
+      <a href="#" class="btn btn-primary">Follow us</a>
+    </div>
+  </div>
+  <div class="card">
+    <img src="tiktok.png" class="card-img-top" alt="tiktok-icon">
+    <div class="card-body">
+      <h5 class="card-title">TikTok</h5>
+      <a href="https://www.tiktok.com/@style.fix.clothing?_t=ZM-8w7qy8mpgXf&_r=1" class="btn btn-primary">Follow us</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- Back to top button -->
+<button class="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">↑</button>
+
+<script src="search.js"></script>
+</body>
+</html>
